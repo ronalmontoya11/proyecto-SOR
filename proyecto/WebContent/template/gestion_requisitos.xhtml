@@ -1,0 +1,25 @@
+	<!-- Modal Structure -->
+	
+
+<h:form>
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<div class="input-field col s6">
+				<input  jsf:id="documento" id="first_name2" type="text" class="validate" jsf:value="#{tablaBean.miPersona.contra}" /> <label
+						class="active" for="first_name2">Documento</label>
+			</div>
+			<div class="input-field col s6">
+				<input  jsf:id="contraseña" id="first_name2" type="password" class="validate" jsf:value="#{tablaBean.miPersona.contrase}" /> <label
+						class="active" for="first_name2">Contraseña</label>
+			</div>
+			<p>Export-DRT solucion a tu desorden</p>
+		</div>
+		<div class="modal-footer">
+			<h:commandButton  action="#{tablaBean.ingresar()}" actionListener="#{tablaBean.ingresar()}"
+			value="Ingresar" />
+
+		</div>
+	</div>
+	
+	
+	</h:form>

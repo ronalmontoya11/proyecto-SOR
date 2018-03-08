@@ -1,0 +1,194 @@
+<!DOCTYPE html >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/template/barraDeNavegacion.xhtml">
+
+
+	<ui:param name="tituloPagina" value="paghina de Inicio" />
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet"></link>
+	<link rel="stylesheet" href="resources/marelialize/css/materialize.css"></link>
+	<link rel="stylesheet" href="resources/css/estilos.css"></link>
+
+	<link rel="stylesheet" href="resources/css/fontawesome-all.min.css"></link>
+
+
+
+
+	<ui:define name="contenido">
+
+
+		<h:form>
+
+
+			<section class=" col s12 l12 m12 ">
+				<div class="card-panel" style="width: 98%; height: 100%">
+
+					<div class="co0lor">
+						<div class="row">
+							<div class="col l12" style="text-align: center;">
+
+								<h4>Consulta de Usuarios</h4>
+
+							</div>
+
+						</div>
+					</div>
+
+					<br /> <br />
+
+
+
+
+					<div class="row">
+						<div class="col l12">
+
+							<div class="col l4">
+								<h:commandButton action="#{tablaBean.consultarLista()}"
+									value="General" class="waves-effect waves-light btn col l6" />
+							</div>
+							<div class="col l2"></div>
+							<div class="col l6">
+
+								<div class="input-field col l6" style="margin-top: -10px;">
+									<i class="material-icons prefix">account_circle</i>
+									<h:inputText value="#{tablaBean.miPersona.documento}"
+										id="documento" />
+									<label for="icon_prefix">Ingrese el documento </label>
+
+
+
+
+								</div>
+								<h:commandButton action="#{tablaBean.consultaIndividual()}"
+									value="Consultar" class="waves-effect waves-light btn col l6" />
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+					<div class="row">
+						<h:form class="col l12">
+							<div class="row"></div>
+
+
+						</h:form>
+					</div>
+
+
+					<h:dataTable value="#{tablaBean.listaPersonas}" var="datos"
+						border="4" class="striped">
+
+
+						<h:column>
+							<f:facet name="header">Nombre</f:facet>
+							<h:inputText value="#{datos.nombre}" rendered="#{datos.editar}" />
+							<h:outputLabel value="#{datos.nombre}"
+								rendered="#{not datos.editar}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">documento</f:facet>
+							<h:inputText value="#{datos.documento}"
+								rendered="#{datos.editar}" />
+							<h:outputLabel value="#{datos.documento}"
+								rendered="#{not datos.editar}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">correo</f:facet>
+							<h:inputText value="#{datos.correo}" rendered="#{datos.editar}" />
+							<h:outputLabel value="#{datos.correo}"
+								rendered="#{not datos.editar}" />
+						</h:column>
+
+						
+
+						<h:column>
+							<f:facet name="header">tipos</f:facet>
+							<h:inputText value="#{datos.usuario}" rendered="#{datos.editar}" />
+							<h:outputLabel value="#{datos.usuario}"
+								rendered="#{not datos.editar  }" />
+						</h:column>
+º
+				       <h:column>
+
+
+							<f:facet name="header">
+								<h:outputLabel value="Acciones" />
+							</f:facet>
+
+							<h:commandLink action="#{tablaBean.editarPersona(datos)}"
+								class="fas fa-trash-alt" rendered="#{not datos.editar}">
+
+								<i class="large material-icons tiny" style="font-size: 2em">border_color</i>
+
+							</h:commandLink>
+
+							<h:commandLink action="#{tablaBean.guardarPersona(datos)}"
+								rendered="#{datos.editar}">
+
+								<i class="large material-icons tiny" style="font-size: 2em">save</i>
+							</h:commandLink>
+
+							<h:commandLink action="#{tablaBean.eliminarPersona(datos)}">
+
+
+								<i class="large material-icons tiny" style="font-size: 2em">remove_circle</i>
+
+							</h:commandLink>
+
+						</h:column>
+
+					</h:dataTable>
+
+					<br></br>
+
+				</div>
+
+
+
+			</section>
+
+
+
+
+
+		</h:form>
+
+		<script type="text/javascript"
+			src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript"
+			src="resources/marelialize/js/materialize.min.js"></script>
+
+		<SCRIPT>
+	 $(document).ready(function() {
+		    $('select').material_select();
+		  });
+
+		   
+	 
+		</SCRIPT>
+
+		<script>
+
+	 $('select').material_select('destroy');
+		
+	</script>
+
+
+
+	</ui:define>
+
+
+
+</ui:composition>

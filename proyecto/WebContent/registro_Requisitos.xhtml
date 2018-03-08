@@ -1,0 +1,142 @@
+<!DOCTYPE html >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	template="/template/barraDeNavegacion.xhtml">
+
+
+	<ui:param name="tituloPagina" value="paghina de Inicio" />
+
+
+	<ui:define name="contenido">
+
+
+		<div class="card-panel" style="width: 98%; height: 100%">
+
+
+
+			<div class="row">
+				<div class="col l12" style="text-align: center;">
+
+					<H2>Registro De Funcionalidades</H2>
+
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col s6 m9">
+					<p>
+						En este espacio podrás registrar funcionalidades de tu <b>Sistema</b>
+						ingresando los datos funcionales en los campos de registro .
+						Navega desde el boton <b>Consultar </b> donde miraras el resultado
+						de tus datos de una forma segura y facil
+					</p>
+				</div>
+				<div class="col s6 m3">
+					<a href="#!user"><img class="perfil2"
+						src="resources/img/icon-registro-digital.png" style="margin-top: -35px" /></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<h:form class="col s12">
+
+					<div class="col l12">
+						<div class="input-field col l2">
+							<input jsf:id="id" id="first_name2" type="text" class="validate"
+								jsf:value="#{tablaBean.miPersona.id}" /> <label class="active"
+								for="first_name2">Id Funcionalidad</label>
+
+						</div>
+
+						<div class="input-field col l5">
+							<input jsf:id="rol" id="last_name" type="text" class="validate"
+								jsf:value="#{tablaBean.miPersona.rol}" /> <label
+								for="last_name">rol</label>
+
+						</div>
+
+						<div class="input-field col s5">
+							<input jsf:id="TipoUsuario"   id="last_name" type="text"
+								class="validate" jsf:value="#{tablaBean.miPersona.tipo}" /> <label
+								for="last_name">Tipo de Usuario</label>
+
+
+
+
+
+						</div>
+
+						<div class="input-field col s12">
+							<input jsf:id="funcionalidad" id="last_name" type="text"
+								class="validate"
+								jsf:value="#{tablaBean.miPersona.funcionalidad}" /> <label
+								for="last_name">funcionalidad</label>
+
+						</div>
+
+						<div class="input-field col s12">
+							<i class="material-icons prefix">mode_edit</i>
+							<textarea id="icon_prefix2" class="materialize-textarea"
+								jsf:value="#{tablaBean.miPersona.descripcion}"></textarea>
+							<label for="icon_prefix2">descripcion</label>
+
+						</div>
+
+
+
+
+
+
+						<div class="col l12">
+
+							<div class="col l6">
+
+								<h:commandButton
+									actionListener="#{tablaBean.registroRequisitos()}"
+									value="Ingresar" class="btn waves-effect waves-light"
+									style="width:40%">
+
+								</h:commandButton>
+							</div>
+
+							<div class="col l6">
+								<h:commandButton action="consultaRequisitos" value="Consultar "
+									class="btn waves-effect waves-light" style="width:40%">
+
+
+
+
+								</h:commandButton>
+							</div>
+						</div>
+
+
+					</div>
+
+				</h:form>
+
+			</div>
+		</div>
+
+<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="resources/marelialize/js/materialize.min.js"></script>
+
+	<SCRIPT>
+	 $(document).ready(function() {
+		    Materialize.updateTextFields();
+		  });
+		   
+
+
+		</SCRIPT>
+
+	</ui:define>
+
+
+
+</ui:composition>

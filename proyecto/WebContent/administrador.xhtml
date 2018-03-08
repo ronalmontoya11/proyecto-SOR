@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/barraDeNavegacion.xhtml">
+
+
+	<ui:param name="tituloPagina" value="paghina de Inicio" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet"></link>
+	<link rel="stylesheet" href="resources/marelialize/css/materialize.css"></link>
+	<link rel="stylesheet" href="resources/css/estilos.css"></link>
+
+	<ui:define name="contenido">
+		<h:form>
+
+
+			<section>
+
+    <div class="parallax-container ">
+      <div class="parallax"><img src="resources/img/paginas-webs.png"/></div>
+    </div>
+    
+    <div class="section white ">
+      <div class="row container ">
+        <h2 class="header">Aprende a como Usar nuestro Sistema</h2>
+        <ul class="collapsible popout" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">Paso 1 </i>Paso 1</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">Paso 2</i>Paso 2</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">Paso 3 </i>Paso 3</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="parallax-container">
+      <div class="parallax"><img src=""/></div>
+    </div>
+
+
+  </section>
+  
+<footer class="page-footer green darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Analisis y Desarrolo de Sistemas de Informacion</h5>
+          <p class="grey-text text-lighten-4">No dejes para mañana lo que puedes hacer ya!!!!!!.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <img src="img/logo.png" alt="" class="logo"/>
+         
+          
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="resources/marelialize/js/materialize.min.js"></script>
+
+    <script>
+           $(document).ready(function(){
+            $('.slider').slider();
+          });
+
+          $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+    </script>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

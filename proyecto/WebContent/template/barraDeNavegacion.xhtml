@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>#{tituloPagina}</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="resources/marelialize/css/materialize.css" />
+	<link rel="stylesheet" href="resources/css/estilos.css" />
+
+
+
+</h:head>
+<body>
+
+	<ul id='dropdown1' class='dropdown-content'>
+
+		<li><a href="#!"><i class="material-icons">clear</i>Intructor</a>
+		</li>
+
+		<li><a href="#!"> <i class="material-icons">clear</i>Aprendiz
+		</a></li>
+	</ul>
+
+
+
+
+	<nav class="green darken-3">
+			<div class="nav-wrapper">
+
+
+				<a class="brand-logo"></a>
+
+				<ul class=" hide-on-med-and-down">
+				<li><a href="index.jsf">Crear Proyecto<i
+							class="material-icons right">history</i></a></li>
+					<li><a href="">Proyectos en proceso<i
+							class="material-icons right">history</i></a></li>
+					<li><a href="">Asociar<i class="material-icons right">recent_actors</i></a></li>
+
+					<li><a class="dropdown-button" href="consultar_Administrador.jsf"
+						data-activates="dropdown1">Consultar<i
+							class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-button" href="registro_Administrador.jsf"
+						data-activates="dropdown2">Agregar<i
+							class="material-icons right">arrow_drop_down</i></a></li>
+
+
+
+				</ul>
+			</div>
+		</nav>
+		
+		
+
+
+	<ui:insert name="contenido" />
+</body>
+</html>
+

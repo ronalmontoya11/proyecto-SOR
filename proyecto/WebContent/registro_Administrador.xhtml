@@ -1,0 +1,110 @@
+<!DOCTYPE html >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	template="/template/barraDeNavegacion.xhtml">
+
+
+	<ui:param name="tituloPagina" value="paghina de Inicio" />
+
+	<ui:define name="contenido">
+		<h:form>
+
+
+
+				<div class="card-panel"  style="width: 98%;height: 100%" >
+
+
+<div class="row">
+<div class="col l12" style="text-align: center;">
+
+ <H2>Registro</H2>
+
+</div>
+</div>
+
+
+
+			<div class="row">
+			
+				<h:form class="col s12">
+					
+
+						<div class="input-field col s6">
+							<input jsf:id="nombre" id="first_name2" type="text"
+								class="validate" jsf:value="#{tablaBean.miPersona.nombre}" /> <label
+								class="active" for="first_name2">Nombre</label>
+						</div>
+
+						<div class="input-field col s6">
+							<input jsf:id="documento" id="last_name" type="text"
+								class="validate" jsf:value="#{tablaBean.miPersona.documento}" />
+							<label for="last_name">Documento</label>
+
+						</div>
+
+						<div class="input-field col s12">
+							<input jsf:id="correo" id="last_name" type="email"
+								class="validate" jsf:value="#{tablaBean.miPersona.correo}" /> <label
+								for="last_name">Email</label>
+
+						</div>
+
+						<div class="input-field col s6">
+							<input jsf:id="clave" id="last_name" type="password"
+								class="validate" jsf:value="#{tablaBean.miPersona.contrase}" />
+							<label for="last_name">Contraseña</label>
+
+						</div>
+
+						<div class="input-field col s6">
+							<input jsf:id="usuario" id="last_name" type="text"
+								class="validate" jsf:value="#{tablaBean.miPersona.usuario}" />
+							<label for="last_name">Tipo de Usuario</label>
+
+
+
+
+
+
+							<h:commandButton actionListener="#{tablaBean.agregarPersona()}"
+								value="Ingresar" class="btn waves-effect waves-light"
+								style="width:50%">
+
+
+							</h:commandButton>
+
+
+
+						</div>
+					
+				</h:form>
+
+</div>
+
+</div>
+
+			
+
+		</h:form>
+		
+<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="resources/marelialize/js/materialize.min.js"></script>
+
+	<SCRIPT>
+	 $(document).ready(function() {
+		    Materialize.updateTextFields();
+		  });
+		   
+
+
+		</SCRIPT>
+
+	</ui:define>
+
+
+
+</ui:composition>

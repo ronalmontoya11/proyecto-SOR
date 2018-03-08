@@ -1,0 +1,102 @@
+<!DOCTYPE html >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/template/barraDeNavegacion.xhtml">
+
+
+	<ui:param name="tituloPagina" value="paghina de Inicio" />
+
+	<ui:define name="contenido">
+
+		<div class="card-panel" style="width: 98%; height: 100%">
+
+			<div class="col l12" style="text-align: center;">
+
+				<h4>Consulta De Funcionalidades</h4>
+
+			</div>
+
+
+
+
+			<h:form>
+
+
+				<h:dataTable value="#{tablaBean.listaRequisitos}" var="datos"
+					border="4" class="bordered">
+
+
+					<h:column>
+						<f:facet name="header">Id</f:facet>
+						<h:inputText value="#{datos.id}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.id}" rendered="#{not datos.editar}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Funcionalidad</f:facet>
+						<h:inputText value="#{datos.funcionalidad}"
+							rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.funcionalidad}"
+							rendered="#{not datos.editar}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Descripcion</f:facet>
+						<h:inputText value="#{datos.descripcion}"
+							rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.descripcion}"
+							rendered="#{not datos.editar}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">rol</f:facet>
+						<h:inputText value="#{datos.rol}" rendered="#{datos.editar}" />
+						<h:outputLabel value="#{datos.rol}" rendered="#{not datos.editar}" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">tipo</f:facet>
+						<h:inputText value="#{datos.tipo}" rendered="#{datos.tipo}" />
+						<h:outputLabel value="#{datos.tipo}"
+							rendered="#{not datos.editar  }" />
+					</h:column>
+º
+				       <h:column>
+
+						<f:facet name="header">
+							<h:outputLabel value="Acciones" />
+						</f:facet>
+
+						<h:commandLink action="#{tablaBean.editarPersona(datos)}"
+							rendered="#{not datos.editar}">
+							<i class="large material-icons tiny" style="font-size: 2em">border_color</i>
+						</h:commandLink>
+
+
+						<h:commandLink action="#{tablaBean.guardarRequisitos(datos)}"
+							rendered="#{datos.editar}" />
+						<i class="large material-icons tiny" style="font-size: 2em">save</i>
+						</h:commandLink>
+
+						<h:commandLink action="#{tablaBean.eliminarRequisitos(datos)}">
+							<i class="large material-icons tiny" style="font-size: 2em">remove_circle</i>
+						</h:commandLink>
+
+					</h:column>
+
+				</h:dataTable>
+
+			</h:form>
+
+			<a href="registro_Requisitos.jsf"
+				class="waves-effect waves-light btn" style="margin-top: 25px"><i
+				class="material-icons left">keyboard_backspace</i>Registrar</a>
+		</div>
+
+	</ui:define>
+
+
+
+</ui:composition>

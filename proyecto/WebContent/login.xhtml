@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Document</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet"></link>
+<link rel="stylesheet" href="resources/marelialize/css/materialize.css"></link>
+<link rel="stylesheet" href="resources/css/estilo.css"></link>
+</head>
+
+<body>
+
+<header>
+
+	
+		<a class="waves-effect waves-light btn modal-trigger green right"
+				id="boton" href="#modal1">Login</a>
+				
+
+</header>
+
+	<nav class="green darken-3">
+
+		<div class="nav-wrapper">
+			<div class="nav-wrapper">
+				<form>
+					<div class="input-field col s6 l6 doss">
+					<i class="material-icons left iconob">search</i> 
+						<h:inputText value="" id="search" type="search" styleClass="col s6 l6" > </h:inputText>
+						
+					</div>
+					
+				</form>
+			</div>
+
+			
+		</div>
+		
+	
+		
+	</nav>
+
+
+	<!-- Modal Trigger -->
+
+
+	<!-- Modal Structure -->
+	
+<h:form>
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<div class="input-field col s6">
+				<input  jsf:id="documento" id="first_name2" type="text" class="validate" jsf:value="#{tablaBean.miPersona.contra}" /> <label
+						class="active" for="first_name2">Documento</label>
+			</div>
+			<div class="input-field col s6">
+				<input  jsf:id="contraseña" id="first_name2" type="password" class="validate" jsf:value="#{tablaBean.miPersona.contrase}" /> <label
+						class="active" for="first_name2">Contraseña</label>
+			</div>
+			<p>Export-DRT solucion a tu desorden</p>
+		</div>
+		<div class="modal-footer">
+			<h:commandButton  action="#{tablaBean.ingresar()}" actionListener="#{tablaBean.ingresar()}"
+			value="Ingresar" />
+
+		</div>
+	</div>
+	
+	
+	</h:form>
+
+	<div class="slider">
+		<ul class="slides">
+			<li><img src="img/font-login.jpg"></img>
+				<div class="caption center-align">
+					<h3>Export-DTR</h3>
+					<h5 class="light grey-text text-lighten-3">Te da la
+						Bienvenida.</h5>
+				</div></li>
+			<li><img src="img/documentos.jpg"></img>
+				<div class="caption left-align">
+					<h3>Export-DTR</h3>
+					<h5 class="light grey-text text-lighten-3">Te ofrece
+						Herramientas lo cual te facilitaran tu documentacion.</h5>
+				</div></li>
+			<li><img src="https://lorempixel.com/580/250/nature/3"></img>
+				<div class="caption right-align">
+					<h3>Right Aligned Caption</h3>
+					<h5 class="light grey-text text-lighten-3">Here's our small
+						slogan.</h5>
+				</div></li>
+			<li><img src="https://lorempixel.com/580/250/nature/4"></img>
+				<div class="caption center-align">
+					<h3>This is our big Tagline!</h3>
+				</div></li>
+		</ul>
+	</div>
+
+
+
+	<footer class="page-footer green darken-3">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 ">
+					<h5 class="white-text">Analisis y Desarrolo de Sistemas de
+						Informacion</h5>
+
+
+					<p class="grey-text text-lighten-4">No dejes para mañana lo que
+						puedes hacer ya!!!!!!.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<img src="img/logo.png" alt="" class="logo"></img>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+
+
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="resources/marelialize/js/materialize.min.js"></script>
+
+	<SCRIPT>
+		  $('.modal').modal({
+		      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+		      opacity: .5, // Opacity of modal background
+		      inDuration: 300, // Transition in duration
+		      outDuration: 200, // Transition out duration
+		      startingTop: '4%', // Starting top style attribute
+		      endingTop: '10%', // Ending top style attribute
+		      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+		        
+		        console.log(modal, trigger);
+		      },
+		      
+		    }
+		  );
+		   
+
+
+		</SCRIPT>
+
+
+
+	<script>
+           $(document).ready(function(){
+            $('.slider').slider();
+          });
+    </script>
+</body>
+
+</html>

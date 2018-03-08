@@ -1,0 +1,52 @@
+
+aside{
+margin-top:5%;
+    width:70% ;
+    margin-bottom: 10%;
+    
+}
+.imagenFooter{
+
+width:10% ;
+}
+
+
+.documento{
+
+margin-left:10%;
+    
+}
+.confiCasoUso{
+width: 93%;
+margin-left: 70%;
+}
+.confiHistorias{
+
+width: 113%;
+margin-left:110%;
+
+
+}
+img{
+
+    width: 30%;
+}
+
+#boton{
+	margin-top: 1em;
+	margin-right: 2em;
+}
+#search{
+	margin-left: 2em;
+	width: 40%;
+	background-color: #e8f5e9  ;
+	border: none;
+	border-radius: 10px;
+	color: black;
+}
+
+.iconob{
+	margin-left: 2em;
+}
+
+
